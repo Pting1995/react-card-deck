@@ -1,23 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import cards from "./module/cards.json"
+import DisplayCard from "./module/displayCard.js"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="overview-container">
+      {cards.map((card, index) => {
+        return (<DisplayCard
+          key={index}
+          name={card.name}
+          url={card.url}
+        />)
+      })}
     </div>
   );
 }
