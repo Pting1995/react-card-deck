@@ -1,17 +1,9 @@
-import './App.css';
-import cards from "./module/cards.json"
-import DisplayCard from "./module/displayCard.js"
+import DisplayDeck from "./module/displayDeck"
 
 function App() {
   return (
     <div className="overview-container">
-      {cards.map((card, index) => {
-        return (<DisplayCard
-          key={index}
-          name={card.name}
-          url={card.url}
-        />)
-      })}
+      <DisplayDeck />
     </div>
   );
 }
