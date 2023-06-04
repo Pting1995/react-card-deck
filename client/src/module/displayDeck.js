@@ -25,6 +25,7 @@ function DisplayDeck() {
 		cleanCards
 	])
 
+	// updating an array of objects
 	const changeCardStatus = (index, statusUpdate) => {
 		const deckUpdate = cardState.map(card => {
 			if (card.cardIndex === index) {
@@ -37,18 +38,62 @@ function DisplayDeck() {
 	}
 
 	return (
-		<div className="deck">
-			<p>Deck</p>
-			{cardState.map((card, index) => {
-				return (<DisplayCard
-					key={index}
-					cardIndex={card.cardIndex}
-					name={card.name}
-					url={card.url}
-					cardStatus={card.cardStatus}
-					changeCardStatus={changeCardStatus}
-				/>)
-			})}
+		<div className="card-table">
+			<div className="hand-cards">
+				<h1>Hand</h1>
+				<div class="card-group">
+					{cardState.map((card, index) => {
+						if (card.cardStatus === "hand") {
+							return (<DisplayCard
+								key={index}
+								cardIndex={card.cardIndex}
+								name={card.name}
+								url={card.url}
+								cardStatus={card.cardStatus}
+								changeCardStatus={changeCardStatus}
+							/>)
+						}
+					})}
+				</div>
+
+			</div>
+			<div className="deck-cards">
+				<h1>Deck</h1>
+				<div class="card-group">
+					{cardState.map((card, index) => {
+						if (card.cardStatus === "deck") {
+							return (<DisplayCard
+								key={index}
+								cardIndex={card.cardIndex}
+								name={card.name}
+								url={card.url}
+								cardStatus={card.cardStatus}
+								changeCardStatus={changeCardStatus}
+							/>)
+						}
+					})}
+				</div>
+
+			</div>
+			<div className="discard-cards">
+				<h1>Discard</h1>
+				<div class="card-group">
+					{cardState.map((card, index) => {
+						if (card.cardStatus === "discard") {
+							return (<DisplayCard
+								key={index}
+								cardIndex={card.cardIndex}
+								name={card.name}
+								url={card.url}
+								cardStatus={card.cardStatus}
+								changeCardStatus={changeCardStatus}
+							/>)
+						}
+					})}
+				</div>
+
+			</div>
+
 		</div>
 	);
 }

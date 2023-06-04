@@ -11,3 +11,42 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+/* card container styling */
+.card-group {
+  display: flex;
+  gap: 10px;
+  overflow: overlay;
+  padding: 10px;
+}
+
+.hand-cards {
+  background-color: firebrick;
+}
+
+.deck-cards {
+  background-color: aquamarine;
+}
+
+.discard-cards {
+  background-color: plum;
+}
+
+/* card styling */
+.card-container {
+  width: min-content;
+}
+
+.card-container button {
+  width: calc(100%/2);
+}
