@@ -13,28 +13,36 @@ function DisplayDeck() {
 	}, [])
 
 	const initDeck = () => {
-		cleanCards = [
-			...cards
-		].map(card => ({ ...card, cardLoc: "deck" }))
+		cleanCards = [...cards].map((card, index) => ({
+			...card,
+			cardLoc: "deck",
+			index: index
+		}))
 		setCardState(cleanCards)
 	}
 
 	const [cardState, setCardState] = useState([
-		...cleanCards
+		cleanCards
 	])
 
-	console.log(cardState)
+	const drawCard = (index) => {
+		cardState[index].cardLoc = "draw"
+		console.log(cardState)
+	}
+
+	// console.log(cardState)
 
 	return (
 		<div className="deck">
 			<p>Deck</p>
-			{cards.map((card, index) => {
+			{cardState.map((card, index) => {
 				return (<DisplayCard
 					key={index}
+					index={card.index}
 					name={card.name}
 					url={card.url}
-					cardState={cardState}
-					setCardState={setCardState}
+					cardLoc={card.cardLoc}
+					drawCard={drawCard}
 				/>)
 			})}
 		</div>
