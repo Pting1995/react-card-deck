@@ -4,12 +4,14 @@ npm start
 
 npm run build
 
-Notes:
-page types?
-1. 
-
 features:
-1. see deck, hand, discarded
-2. draw 1 card, draw x cards
-3. discard 1 card
-4. 
+1. add side bar with settings/controls to draw/discard random
+	a. shuffle
+	b. show/hide hand, deck, discarded
+	c. draw 1 random card
+	d. discard 1 random card
+	e. reset deck button
+
+thoughts:
+maybe store deck data in local storage so we can return to it later?
+add place index to each card

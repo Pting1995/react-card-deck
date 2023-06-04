@@ -19,10 +19,17 @@ h4,
 h5,
 h6,
 p {
-  margin: 0;
+  width: min-content;
+  margin: 0 auto;
 }
 
 /* card container styling */
+.hand-cards,
+.deck-cards,
+.discard-cards {
+  min-height: 410px;
+}
+
 .card-group {
   display: flex;
   gap: 10px;
@@ -47,6 +54,28 @@ p {
   width: min-content;
 }
 
+.card-container img {
+  height: 310px;
+}
+
 .card-container button {
   width: calc(100%/2);
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
