@@ -7,11 +7,13 @@ import { useState, useEffect } from "react";
 // d.discard 1 random card
 // e.reset deck button
 
-function SettingsPanel() {
+function SettingsPanel(props) {
 
 	return (
 		<div className="settings">
-			<p>hi</p>
+			<button onClick={() => props.settingsToggle("showHand")}>Toggle Hand Visibility</button>
+			<button onClick={() => props.settingsToggle("showDeck")}>Toggle Deck Visibility</button>
+			<button onClick={() => props.settingsToggle("showDiscard")}>Toggle Discard Visibility</button>
 		</div>
 	);
 }

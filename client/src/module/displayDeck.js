@@ -33,7 +33,6 @@ function DisplayDeck() {
 			}
 			return card;
 		})
-		console.log(deckUpdate)
 		setCardState(deckUpdate)
 	}
 
@@ -41,7 +40,7 @@ function DisplayDeck() {
 		<div className="card-table">
 			<div className="hand-cards">
 				<h1>Hand</h1>
-				<div class="card-group">
+				<div className="card-group">
 					{cardState.map((card, index) => {
 						if (card.cardStatus === "hand") {
 							return (<DisplayCard
@@ -59,7 +58,7 @@ function DisplayDeck() {
 			</div>
 			<div className="deck-cards">
 				<h1>Deck</h1>
-				<div class="card-group">
+				<div className="card-group">
 					{cardState.map((card, index) => {
 						if (card.cardStatus === "deck") {
 							return (<DisplayCard
@@ -77,7 +76,7 @@ function DisplayDeck() {
 			</div>
 			<div className="discard-cards">
 				<h1>Discard</h1>
-				<div class="card-group">
+				<div className="card-group">
 					{cardState.map((card, index) => {
 						if (card.cardStatus === "discard") {
 							return (<DisplayCard
