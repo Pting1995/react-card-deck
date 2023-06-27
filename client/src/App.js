@@ -17,10 +17,10 @@ function App() {
 		setSettingsState({
 			// ... is used to copy state
 			...settingsState,
-			// [] allows variables :)!
+			// [] allows variables :D!
 			[settingsupdate]: !settingsState[settingsupdate]
 		})
-		console.log(settingsState)
+		// console.log(settingsState)
 	}
 
 	return (
@@ -31,7 +31,9 @@ function App() {
 				/>
 			</div>
 			<div className="play-mat-container">
-				<DisplayDeck />
+				<DisplayDeck
+					{...settingsState}
+				/>
 			</div>
 		</div>
 

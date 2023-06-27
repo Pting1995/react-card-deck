@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 import cards from "./cards.json"
 
-function DisplayDeck() {
+function DisplayDeck(props) {
 
 	var cleanCards = []
 
@@ -50,6 +50,8 @@ function DisplayDeck() {
 								url={card.url}
 								cardStatus={card.cardStatus}
 								changeCardStatus={changeCardStatus}
+								// settings
+								showHand={props.showHand}
 							/>)
 						}
 					})}
@@ -68,6 +70,8 @@ function DisplayDeck() {
 								url={card.url}
 								cardStatus={card.cardStatus}
 								changeCardStatus={changeCardStatus}
+								// settings
+								showDeck={props.showDeck}
 							/>)
 						}
 					})}
@@ -86,6 +90,8 @@ function DisplayDeck() {
 								url={card.url}
 								cardStatus={card.cardStatus}
 								changeCardStatus={changeCardStatus}
+								// settings
+								showDiscard={props.showDiscard}
 							/>)
 						}
 					})}
