@@ -38,7 +38,7 @@ p {
 }
 
 /* play mat styling */
-.play-mat-container {
+.card-table {
 	width: calc(100vw - 250px);
 }
 

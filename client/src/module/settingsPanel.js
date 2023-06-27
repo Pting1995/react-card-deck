@@ -10,11 +10,18 @@ import { useState, useEffect } from "react";
 function SettingsPanel(props) {
 
 	return (
-		<div className="settings">
-			<button onClick={() => props.settingsToggle("showHand")}>Toggle Hand Visibility</button>
-			<button onClick={() => props.settingsToggle("showDeck")}>Toggle Deck Visibility</button>
-			<button onClick={() => props.settingsToggle("showDiscard")}>Toggle Discard Visibility</button>
+		<div className="control-bar">
+			<div className="settings">
+				<button onClick={() => props.settingsToggle("showHand")}>Toggle Hand Visibility</button>
+				<button onClick={() => props.settingsToggle("showDeck")}>Toggle Deck Visibility</button>
+				<button onClick={() => props.settingsToggle("showDiscard")}>Toggle Discard Visibility</button>
+			</div>
+			<div className="options">
+				{/* draw random card, discard random card, return random card to deck */}
+				<button onClick={() => props.moveRandomCard("deck", "hand")}>Draw Random Card</button>
+			</div>
 		</div>
+
 	);
 }
 

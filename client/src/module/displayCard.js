@@ -1,7 +1,7 @@
 function DisplayCard(props) {
-	console.log(props)
 	return (
 		<div className="card-container">
+			{/* conditional logic hide cards according to the settings */}
 			{props.showHand || props.showDeck || props.showDiscard
 				? <img src={props.url} alt={props.name} className="card"></img>
 				: <img src="/assets/cardAssets/card_back.png" alt="hidden" className="card"></img>
