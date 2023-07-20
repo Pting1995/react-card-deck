@@ -20,6 +20,7 @@ function App() {
 	// resets the deck - note to self: empty arr at the end of useEffect means fire it once when the page loads
 	useEffect(() => {
 		initDeck()
+		// eslint-disable-next-line
 	}, [])
 
 	// resets deck
@@ -61,6 +62,7 @@ function App() {
 			if (card.cardStatus === initialCardState) {
 				cardChoice.push(card.cardIndex)
 			}
+			return cardChoice
 		})
 		const chosenIndex = Math.floor(Math.random() * cardChoice.length)
 		changeCardStatus(cardChoice[chosenIndex], nextCardState)
