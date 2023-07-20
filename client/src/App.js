@@ -51,8 +51,6 @@ function App() {
 			}
 			return card;
 		})
-		// console.log(deckUpdate[index])
-		// console.log(deckUpdate)
 		setCardState(deckUpdate)
 	}
 
@@ -64,7 +62,6 @@ function App() {
 				cardChoice.push(card.cardIndex)
 			}
 		})
-		console.log(cardChoice)
 		const chosenIndex = Math.floor(Math.random() * cardChoice.length)
 		changeCardStatus(cardChoice[chosenIndex], nextCardState)
 	}
