@@ -17,16 +17,6 @@ function App() {
 		cleanCards
 	])
 
-	// logic to hide cards
-	const settingsToggle = (settingsupdate) => {
-		setSettingsState({
-			// ... is used to copy state
-			...settingsState,
-			// [] allows variables :D!
-			[settingsupdate]: !settingsState[settingsupdate]
-		})
-	}
-
 	// resets the deck - note to self: empty arr at the end of useEffect means fire it once when the page loads
 	useEffect(() => {
 		initDeck()
@@ -42,30 +32,41 @@ function App() {
 		setCardState(cleanCards)
 	}
 
+	// logic to hide cards
+	const settingsToggle = (settingsupdate) => {
+		setSettingsState({
+			// ... is used to copy state
+			...settingsState,
+			// [] allows variables :D!
+			[settingsupdate]: !settingsState[settingsupdate]
+		})
+	}
+
 	// update card state
 	const changeCardStatus = (index, nextCardState) => {
-		const deckUpdate = cardState.map(card => {
+		var deckUpdate = []
+		deckUpdate = cardState.map(card => {
 			if (card.cardIndex === index) {
 				return { ...card, cardStatus: nextCardState }
 			}
 			return card;
 		})
+		// console.log(deckUpdate[index])
+		// console.log(deckUpdate)
 		setCardState(deckUpdate)
 	}
 
-	//checks for card status, populates an array, then randomly chooses a card to move to the designated card state
+	//checks for card status, populates an array, thenrandomly chooses a card to move to the designated card state
 	const moveRandomCard = (initialCardState, nextCardState) => {
-		console.log(cardState)
 		var cardChoice = []
-		var chosenIndex
 		cardState.map(card => {
 			if (card.cardStatus === initialCardState) {
-				cardChoice.push(card)
+				cardChoice.push(card.cardIndex)
 			}
 		})
-		chosenIndex = Math.floor(Math.random() * cardChoice.length)
-		console.log(chosenIndex)
-		changeCardStatus(chosenIndex, nextCardState)
+		console.log(cardChoice)
+		const chosenIndex = Math.floor(Math.random() * cardChoice.length)
+		changeCardStatus(cardChoice[chosenIndex], nextCardState)
 	}
 
 	return (

@@ -19,6 +19,7 @@ function SettingsPanel(props) {
 			<div className="options">
 				{/* draw random card, discard random card, return random card to deck */}
 				<button onClick={() => props.moveRandomCard("deck", "hand")}>Draw Random Card</button>
+				<button onClick={() => props.moveRandomCard("hand", "discard")}>Discard Random Card</button>
 			</div>
 		</div>
 
