@@ -5,11 +5,17 @@ import { useState, useEffect } from "react";
 import cards from "./module/cards.json"
 
 function App() {
+	var cleanCards = []
+
 	const [settingsState, setSettingsState] = useState({
 		showHand: true,
 		showDeck: true,
 		showDiscard: true,
 	})
+
+	const [cardState, setCardState] = useState([
+		cleanCards
+	])
 
 	// logic to hide cards
 	const settingsToggle = (settingsupdate) => {
@@ -21,13 +27,12 @@ function App() {
 		})
 	}
 
-	//resets the deck - note to self: empty arr at the end of useEffect means fire it once
+	// resets the deck - note to self: empty arr at the end of useEffect means fire it once when the page loads
 	useEffect(() => {
 		initDeck()
 	}, [])
 
-	var cleanCards = []
-
+	// resets deck
 	const initDeck = () => {
 		cleanCards = [...cards].map((card, index) => ({
 			...card,
@@ -37,11 +42,7 @@ function App() {
 		setCardState(cleanCards)
 	}
 
-	const [cardState, setCardState] = useState([
-		cleanCards
-	])
-
-	// updating an array of objects
+	// update card state
 	const changeCardStatus = (index, nextCardState) => {
 		const deckUpdate = cardState.map(card => {
 			if (card.cardIndex === index) {
@@ -52,7 +53,7 @@ function App() {
 		setCardState(deckUpdate)
 	}
 
-	//checks card status, then populates an array, then randomly chooses a card to move to the designated card state
+	//checks for card status, populates an array, then randomly chooses a card to move to the designated card state
 	const moveRandomCard = (initialCardState, nextCardState) => {
 		console.log(cardState)
 		var cardChoice = []
