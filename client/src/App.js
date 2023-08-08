@@ -18,10 +18,7 @@ function App() {
 		cleanCards
 	])
 
-	const [historyState, setHistoryState] = useState([
-		"Hi",
-		"Bye"
-	])
+	const [historyState, setHistoryState] = useState([])
 
 	// resets the deck - note to self: empty arr at the end of useEffect means fire it once when the page loads
 	useEffect(() => {
@@ -49,9 +46,14 @@ function App() {
 		})
 	}
 
-	// update card state
+	// update card history & state
 	const changeCardStatus = (index, nextCardState) => {
 		var deckUpdate = []
+		setHistoryState([
+			...historyState,
+			`${cardState[index].name} was moved from the ${cardState[index].cardStatus} to the ${nextCardState}`
+		])
+
 		deckUpdate = cardState.map(card => {
 			if (card.cardIndex === index) {
 				return { ...card, cardStatus: nextCardState }
