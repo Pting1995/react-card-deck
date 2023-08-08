@@ -1,18 +1,18 @@
 function SettingsPanel(props) {
 	return (
 		<div className="side-bar">
-			<div className="control-bar">
+			<div className="settings-container">
 				<h1>Options</h1>
-				<div className="settings">
+				<div>
 					<button onClick={() => props.settingsToggle("showHand")}>Toggle Hand Visibility</button>
 					<button onClick={() => props.settingsToggle("showDeck")}>Toggle Deck Visibility</button>
 					<button onClick={() => props.settingsToggle("showDiscard")}>Toggle Discard Visibility</button>
 					<button onClick={() => props.settingsToggle("showHistory")}>Toggle History Visibility</button>
 				</div>
+			</div>
+			<div className="actions-container">
 				<h1>Actions</h1>
-				<div className="options">
-
-					{/* draw random card, discard random card, return random card to deck */}
+				<div>
 					<button onClick={() => props.moveRandomCard("deck", "hand")}>Draw Random Card</button>
 					<button onClick={() => props.moveRandomCard("hand", "discard")}>Discard Random Card</button>
 				</div>

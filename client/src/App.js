@@ -51,7 +51,7 @@ function App() {
 		var deckUpdate = []
 		setHistoryState([
 			...historyState,
-			`${cardState[index].name} was moved from the ${cardState[index].cardStatus} to the ${nextCardState}`
+			`${cardState[index].name2} was moved from ${cardState[index].cardStatus} to ${nextCardState}`
 		])
 
 		deckUpdate = cardState.map(card => {
