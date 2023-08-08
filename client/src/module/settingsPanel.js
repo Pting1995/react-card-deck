@@ -9,14 +9,16 @@ function SettingsPanel(props) {
 					<button onClick={() => props.settingsToggle("showDiscard")}>Toggle Discard Visibility</button>
 					<button onClick={() => props.settingsToggle("showHistory")}>Toggle History Visibility</button>
 				</div>
+				<h1>Actions</h1>
 				<div className="options">
+
 					{/* draw random card, discard random card, return random card to deck */}
 					<button onClick={() => props.moveRandomCard("deck", "hand")}>Draw Random Card</button>
 					<button onClick={() => props.moveRandomCard("hand", "discard")}>Discard Random Card</button>
 				</div>
 			</div>
 			<div className="history-container">
-				{props.showHistory
+				{props.settingsState.showHistory
 					? <h1>History</h1>
 					: <h1>History Hidden</h1>
 				}
