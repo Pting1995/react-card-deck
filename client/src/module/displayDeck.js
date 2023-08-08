@@ -10,13 +10,9 @@ function DisplayDeck(props) {
 						if (card.cardStatus === "hand") {
 							return (<DisplayCard
 								key={index}
-								cardIndex={card.cardIndex}
-								name={card.name}
-								url={card.url}
-								cardStatus={card.cardStatus}
+								{...card}
 								changeCardStatus={props.changeCardStatus}
-								// settings
-								showHand={props.showHand}
+								showHand={props.settingsState.showHand}
 							/>)
 						}
 					})}
@@ -30,13 +26,9 @@ function DisplayDeck(props) {
 						if (card.cardStatus === "deck") {
 							return (<DisplayCard
 								key={index}
-								cardIndex={card.cardIndex}
-								name={card.name}
-								url={card.url}
-								cardStatus={card.cardStatus}
+								{...card}
 								changeCardStatus={props.changeCardStatus}
-								// settings
-								showDeck={props.showDeck}
+								showHand={props.settingsState.showDeck}
 							/>)
 						}
 					})}
@@ -50,13 +42,9 @@ function DisplayDeck(props) {
 						if (card.cardStatus === "discard") {
 							return (<DisplayCard
 								key={index}
-								cardIndex={card.cardIndex}
-								name={card.name}
-								url={card.url}
-								cardStatus={card.cardStatus}
+								{...card}
 								changeCardStatus={props.changeCardStatus}
-								// settings
-								showDiscard={props.showDiscard}
+								showHand={props.settingsState.showDiscard}
 							/>)
 						}
 					})}

@@ -1,28 +1,27 @@
-import { useState, useEffect } from "react";
-
-// a.shuffle
-
-// b.show / hide hand, deck, discarded
-// c.draw 1 random card
-// d.discard 1 random card
-// e.reset deck button
-
 function SettingsPanel(props) {
-
 	return (
-		<div className="control-bar">
-			<div className="settings">
-				<button onClick={() => props.settingsToggle("showHand")}>Toggle Hand Visibility</button>
-				<button onClick={() => props.settingsToggle("showDeck")}>Toggle Deck Visibility</button>
-				<button onClick={() => props.settingsToggle("showDiscard")}>Toggle Discard Visibility</button>
+		<div className="side-bar">
+			<div className="control-bar">
+				<h1>Options</h1>
+				<div className="settings">
+					<button onClick={() => props.settingsToggle("showHand")}>Toggle Hand Visibility</button>
+					<button onClick={() => props.settingsToggle("showDeck")}>Toggle Deck Visibility</button>
+					<button onClick={() => props.settingsToggle("showDiscard")}>Toggle Discard Visibility</button>
+					<button onClick={() => props.settingsToggle("showHistory")}>Toggle History Visibility</button>
+				</div>
+				<div className="options">
+					{/* draw random card, discard random card, return random card to deck */}
+					<button onClick={() => props.moveRandomCard("deck", "hand")}>Draw Random Card</button>
+					<button onClick={() => props.moveRandomCard("hand", "discard")}>Discard Random Card</button>
+				</div>
 			</div>
-			<div className="options">
-				{/* draw random card, discard random card, return random card to deck */}
-				<button onClick={() => props.moveRandomCard("deck", "hand")}>Draw Random Card</button>
-				<button onClick={() => props.moveRandomCard("hand", "discard")}>Discard Random Card</button>
+			<div className="history-container">
+				{props.showHistory
+					? <h1>History</h1>
+					: <h1>History Hidden</h1>
+				}
 			</div>
 		</div>
-
 	);
 }
 
