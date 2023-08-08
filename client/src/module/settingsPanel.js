@@ -1,4 +1,5 @@
 function SettingsPanel(props) {
+	console.log(props)
 	return (
 		<div className="side-bar">
 			<div className="control-bar">
@@ -19,7 +20,12 @@ function SettingsPanel(props) {
 			</div>
 			<div className="history-container">
 				{props.settingsState.showHistory
-					? <h1>History</h1>
+					? <>
+						<h1>History</h1>
+						{props.historyState.map((event, index) => {
+							return <p>{event}</p>
+						})}
+					</>
 					: <h1>History Hidden</h1>
 				}
 			</div>

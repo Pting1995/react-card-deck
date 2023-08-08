@@ -15,7 +15,7 @@ function DisplayDeck(props) {
 							key={index}
 							{...card}
 							changeCardStatus={props.changeCardStatus}
-							showHand={props.settingsState.showDeck}
+							showHand={props.settingsState.showHand}
 						/>)
 					})}
 				</div>
@@ -28,11 +28,10 @@ function DisplayDeck(props) {
 							key={index}
 							{...card}
 							changeCardStatus={props.changeCardStatus}
-							showHand={props.settingsState.showDeck}
+							showDeck={props.settingsState.showDeck}
 						/>)
 					})}
 				</div>
-
 			</div>
 			<div className="discard-cards">
 				<h1>Discard</h1>
@@ -42,11 +41,10 @@ function DisplayDeck(props) {
 							key={index}
 							{...card}
 							changeCardStatus={props.changeCardStatus}
-							showHand={props.settingsState.showDeck}
+							showDiscard={props.settingsState.showDiscard}
 						/>)
 					})}
 				</div>
-
 			</div>
 		</div>
 	);

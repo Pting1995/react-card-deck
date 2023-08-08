@@ -18,7 +18,10 @@ function App() {
 		cleanCards
 	])
 
-	const [historyState, setHistoryState] = useState([])
+	const [historyState, setHistoryState] = useState([
+		"Hi",
+		"Bye"
+	])
 
 	// resets the deck - note to self: empty arr at the end of useEffect means fire it once when the page loads
 	useEffect(() => {
@@ -75,13 +78,15 @@ function App() {
 		<div className="app-container">
 			<SettingsPanel
 				settingsState={settingsState}
+				historyState={historyState}
 				settingsToggle={settingsToggle}
 				moveRandomCard={moveRandomCard}
 			/>
 			<DisplayDeck
 				settingsState={settingsState}
-				changeCardStatus={changeCardStatus}
 				cardState={cardState}
+				historyState={historyState}
+				changeCardStatus={changeCardStatus}
 			/>
 		</div>
 
