@@ -69,20 +69,12 @@ button {
 
 /* play mat styling */
 .card-table {
-	/* total width - sidebar width - scrollbar width - padding right width */
-	width: calc(100vw - 270px - 10px - 10px);
+	/* total width - sidebar width - scrollbar width - padding width */
+	width: calc(100vw - 270px - 10px - 20px);
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
 	padding: 10px;
-}
-
-@media screen and (min-height: 1230px) {
-
-	/* accounts for the scrollbar not rendering */
-	.card-table {
-		width: calc(100vw - 250px);
-	}
 }
 
 /* card container styling */
@@ -143,5 +135,5 @@ button {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: #555;
+	background: gray;
 }
