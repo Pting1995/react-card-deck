@@ -1,10 +1,12 @@
-# React Card Deck by Peter Ting
+## Available Scripts
 
-This application is supposed to simulate a deck of cards! 
+In the project directory, you can run:
 
-# Features
+### `npm start`
 
-- Toggle visibility of cards in your hand, deck, discard pile or history!
-- Choose which cards to draw, return or discard
-- Randomly draw cards from the deck or randomly discard a card from your hand
-- View the history of all changes to your cards
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000)
+
+### `npm run deploy`
+
+Runs script to publish to gh-pages
