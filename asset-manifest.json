@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react-card-deck/static/css/main.891a9767.css",
-    "main.js": "/react-card-deck/static/js/main.e9bba3ef.js",
+    "main.js": "/react-card-deck/static/js/main.c4c53e8f.js",
     "index.html": "/react-card-deck/index.html",
     "main.891a9767.css.map": "/react-card-deck/static/css/main.891a9767.css.map",
-    "main.e9bba3ef.js.map": "/react-card-deck/static/js/main.e9bba3ef.js.map"
+    "main.c4c53e8f.js.map": "/react-card-deck/static/js/main.c4c53e8f.js.map"
   },
   "entrypoints": [
     "static/css/main.891a9767.css",
-    "static/js/main.e9bba3ef.js"
+    "static/js/main.c4c53e8f.js"
   ]
 }
