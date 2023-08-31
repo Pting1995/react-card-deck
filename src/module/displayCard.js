@@ -4,7 +4,7 @@ function DisplayCard(props) {
 			{/* conditional logic hide cards according to the settings */}
 			{props.showHand || props.showDeck || props.showDiscard
 				? <img src={window.location.origin + "/react-card-deck" + props.url} alt={props.name} className="card"></img>
-				: <img src="/assets/cardAssets/card_back.png" alt="hidden" className="card"></img>
+				: <img src={window.location.origin + "/react-card-deck/assets/cardAssets/card_back.png"} alt="hidden" className="card"></img>
 			}
 
 			{/* conditional logic to display buttons */}
