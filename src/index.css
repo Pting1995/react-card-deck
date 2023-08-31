@@ -137,3 +137,26 @@ button {
 ::-webkit-scrollbar-thumb:hover {
 	background: gray;
 }
+
+@media only screen and (max-width : 1024px) {
+	.app-container {
+		flex-direction: column;
+	}
+
+	.side-bar {
+		position: relative;
+		height: auto;
+	}
+
+	.hand-cards,
+	.deck-cards,
+	.discard-cards,
+	.app-container .card-table {
+		width: auto;
+	}
+
+	.history-container>p {
+		width: calc(100% - 20px);
+	}
+
+}
