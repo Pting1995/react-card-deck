@@ -2,6 +2,8 @@
 
 This application is supposed to simulate a deck of cards! 
 
+Live Link: https://pting1995.github.io/react-card-deck/
+
 ## Features
 
 - Toggle visibility of cards in your hand, deck, discard pile
